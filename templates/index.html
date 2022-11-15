@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <img src="{% static 'img/icons.png' %}" height="55px">
+        <a class="navbar-brand" href="{% url 'home' %}">&nbsp;Login session</a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                &nbsp; &nbsp; &nbsp;
+                <li class="nav-item"> 
+                    <a class="btn btn-primary navbar-btn" type="button" href="{% url 'login' %}">Login</a>
+                </li>
+                &nbsp; &nbsp; &nbsp;
+                
+                
+                &nbsp; &nbsp; &nbsp;
+            </ul>
+        </div>
+    </div>
+</nav>
+<br><br>
+    <div class="text-center">
+        <br><br><br>
+        <h1>Login session </h1><br><br>
+        <h3>“Sign out of Past... Login to the New !!!”</h3>
+        <h4> — Stay Blessed</h4>
+        <br><br>
+    </div>
+{% endblock %}

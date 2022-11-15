@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <img src="{% static 'img/icons.png' %}" height="55px">
+        <a class="navbar-brand" href="{% url 'home' %}">&nbsp;Login session</a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                &nbsp; &nbsp; &nbsp;
+                           
+                &nbsp; &nbsp; &nbsp;
+            </ul>
+        </div>
+    </div>
+</nav>
+<br><br>
+<div class="container shadow-md p-5 formLayout">
+    <h2>Login Form</h2>
+    <form class="form-group row " method="post" style="font-size:20px;" >
+        {% csrf_token %}          
+
+        {{form.as_p}}
+        
+        <div  class='btn-group butn' style="margin-top:25px ;">                
+            <input class="btn btn-outline-primary" type="submit" value="Login">&nbsp;&nbsp;&nbsp;
+            <input class="btn btn-outline-primary" type="reset" value="Reset">
+        </div>
+    </form>
+</div>
+{% endblock %}

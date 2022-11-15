@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <img src="{% static 'img/icons.png' %}" height="55px">
+        <a class="navbar-brand" href="{% url 'home' %}">&nbsp;Login session</a>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                &nbsp; &nbsp; &nbsp;
+                <li class="nav-item"> 
+                    <a class="btn btn-primary navbar-btn" type="button" href="{% url 'logout' %}">Logout</a>
+                </li>
+                &nbsp; &nbsp; &nbsp;
+                
+                
+                &nbsp; &nbsp; &nbsp;
+            </ul>
+        </div>
+    </div>
+</nav>
+<br><br>
+<h2> &nbsp;&nbsp;&nbsp;Student List </h2><hr>
+{% for message in messages %}
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+            <p id="message-timer" class="alert alert-success float-center text-center">{{message}}</p>
+        {% endif %}
+{% endfor %}
+
+    <div class="container ">
+        <div class="row">
+            <div class="col-lg-6 ">
+                <div class="card" style="width: 34rem;">
+                    <div class="card-body">
+                        <h4 class="card-title" style="color: rgb(18, 18, 18);">Full Name :  {{ request.session.full_name }}</h4>
+                        <br>
+                        <h6 class="card-subtitle mb-2 ">Email : {{request.session.email}}</h6>
+                        <h6 class="card-subtitle mb-2 ">Gender : {{request.session.gender}}</h6>
+                        <h6 class="card-subtitle mb-2 ">Age : {{request.session.age}}</h6>
+                                               
+                    </div>
+                </div><br><br>
+            </div>
+        </div>
+    </div>       
+    
+{% endblock %}
+
